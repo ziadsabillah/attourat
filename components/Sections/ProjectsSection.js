@@ -171,7 +171,7 @@ const ProjectSection = () => {
                     </SectionHeader>
                     <ResponsiveMasonry
                         className="masonry-wrapper"
-                        columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+                        columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 4 }}>
                         <Masonry className="masonry">
                         {
                                 cards?.map((card, index) => (

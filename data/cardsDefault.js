@@ -28,6 +28,11 @@ const cardsDefault = [
         imgPath: "/projects/culture.png",
 
     },
+    {
+        id: 6,
+        projectName: 'Mosquée',
+        imgPath: '/projects/mosque.jpeg'
+    }
     
 ];
 
