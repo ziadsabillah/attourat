@@ -1,19 +1,14 @@
 const cardsDefault = [
     {
         id: 4,
-        projectName: "Aéroport Al Houceima",
-        imgPath: "/projects/ae.png",
+        projectName: "Route de l'Aéroport Al Houceima",
+        imgPath: "/projects/route.png",
 
-    },
-    {
-        id: 1,
-        projectName: "Le Grand Théatre d'Al Houceima",
-        imgPath: "/projects/amphi.png",
     },
     {
         id: 2,
         projectName: "Piscine Batha",
-        imgPath: "/projects/piscine2.png",
+        imgPath: "/projects/piscine.png",
     },
     {
         id: 3,
@@ -22,8 +17,14 @@ const cardsDefault = [
     },
     
     {
+        id: 1,
+        projectName: "Le Grand Théatre d'Al Houceima",
+        imgPath: "/projects/amphi.png",
+    },
+    
+    {
         id: 5,
-        projectName: "Centre Culturel Province Al Houceima",
+        projectName: "Lycée Mouad Bnou Jabal",
         imgPath: "/projects/culture.png",
 
     },
