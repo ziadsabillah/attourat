@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import styled from 'styled-components'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
@@ -152,28 +152,13 @@ const filtersDefault = [
 
 
 const ProjectSection = () => {
-    const [filters, updateFilters] = useState(filtersDefault)
-    const [selectedFilter, setSelectedFilter] = useState("Tout")
 
-    const onFilter = event => {
-        const {
-            target: { value, checked }
-        } = event;
-        updateFilters(state =>
-            state.map(f => {
-                f.isChecked = false;
-                if (f.label === value) {
-                    return {
-                        ...f,
-                        isChecked: checked
-                    }
-                }
-                setSelectedFilter(selectedFilter => selectedFilter = value);
-                return f;
-            }));
+    const [cards, setCards] = useState(null);
 
+    useEffect(() => {
+        setCards(cardsDefault);
+    }, [])
 
-    }
 
     return (
         <>
@@ -187,38 +172,14 @@ const ProjectSection = () => {
                     <ResponsiveMasonry
                         className="masonry-wrapper"
                         columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
-                        {/* <div style={{
-                            textAlign: 'center',
-                            position: 'absolute',
-                            left: '0',
-                            top: '0',
-                            zIndex: '1'
-                        }} className="filter-tabs clearfix">
-                            <FilterTabs className="filter-tabs clearfix">
-                                {filters.map(f => (
-                                    <Filter key={`${f.label}_key`} className="filter">
-                                        <input
-                                            id={f.label}
-                                            type="checkbox"
-                                            value={f.label}
-                                            onChange={onFilter}
-                                            checked={f.isChecked}
-                                        />
-                                        <label htmlFor={f.label} className={`
-                                            ${selectedFilter === f.label ? 'active' : ''}
-                                        `}>{f.label}</label>
-                                    </Filter>
-                                ))}
-                            </FilterTabs>
-                        </div> */}
                         <Masonry className="masonry">
                         {
-                                cardsDefault?.map(card => (
-                                    <Card key={card.id} className={`card`}>
+                                cards?.map((card, index) => (
+                                    <Card key={card.id} className='card'>
                                         <CardContent>
                                             <img src={card.imgPath} />
                                             <ProjectInfo className="project-info">
-                                                <h4><a href={`/projects`}>{card.projectName}</a></h4>
+                                                <h4><a href="/">{card.projectName}</a></h4>
                                             </ProjectInfo>
                                         </CardContent>
                                     </Card>
