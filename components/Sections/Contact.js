@@ -173,10 +173,6 @@ const Contact = () => {
                                 contact@atourrate.com
                                 </li>
                             </InfoList>
-                            <SmallHeader>Cordonnées</SmallHeader>
-                            <Times>
-
-                            </Times>
                         </RightColumn>
                     </Row>
                 </AutoContainer>
