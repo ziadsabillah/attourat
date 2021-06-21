@@ -41,7 +41,7 @@ export const TextArea = styled.textarea`
     display: block;
     width: 100%;
     padding: 10px 22px;
-    color: #0000;
+    color: #000 !important;
     border-radius: 2px;
     border: 1px solid #d7d7d7;
     transition: all 0.5s ease;
