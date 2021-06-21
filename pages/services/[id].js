@@ -24,7 +24,7 @@ const ServiceDetail = () => {
     return (
         <>
 
-            <Layout>
+            <Layout title={service ? service.title : 'Nos Services'}>
                 <DetailsPageHeader section={service ? service.title : ''} />
                 <SideBarLayout allServices={services} currentService={service} images={images} />
             </Layout>
