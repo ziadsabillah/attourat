@@ -122,7 +122,7 @@ Dans un environnement à très forte concurrence, Société ATOURRATE considère
                             </LeftColumn>
                             <RightColumn>
                                  <div className="react-player">
-                                     <img src='/img/d.jpeg' alt="Image Featured" />
+                                     <img src='/img/logofooter.png' alt="Image Featured" />
                                  </div>
                             </RightColumn>
                         </Row>

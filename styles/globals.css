@@ -252,11 +252,9 @@ header {
 
 
 .react-player {
-  width: 520px;
-  height: 400px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 25%;
+  left: 25%;
   height: 400px;
   padding: 3rem;
 }
