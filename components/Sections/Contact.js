@@ -110,9 +110,7 @@ const Times = styled.div`
 const Contact = () => {
 
 
-
-
-    const handleSubmit = async (e) => {
+    async function handleOnSubmit(e) {
         e.preventDefault();
 
         const formData = {};
@@ -138,7 +136,7 @@ const Contact = () => {
                     </SectionHeader>
                     <Row className="clearfix">
                         <LeftColumn>
-                            <Form onSubmit={handleSubmit} method='POST'>
+                            <Form onSubmit={handleOnSubmit} method='post'>
                                 <Row>
                                     <FormGroup>
                                         <Input
