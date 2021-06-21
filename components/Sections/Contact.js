@@ -2,6 +2,7 @@ import styled from "styled-components";
 import AutoContainer from "../AutoContainer";
 import { SectionHeader } from "../SectionHeader";
 import { Form, FormGroup, Input, SubmitButton, TextArea } from '../General'
+import { useState, useRef } from "react";
 
 
 const ContactSection = styled.section`
@@ -107,6 +108,25 @@ const Times = styled.div`
 
 
 const Contact = () => {
+
+
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const formData = {};
+
+        Array.from(e.currentTarget.elements).forEach(field => {
+            if (!field.name) return;
+            formData[field.name] = field.value;
+        });
+
+        await fetch('/api/mail', {
+            method: 'POST',
+            body: JSON.stringify(formData),
+        })
+    }
     return (
         <>
 
@@ -118,7 +138,7 @@ const Contact = () => {
                     </SectionHeader>
                     <Row className="clearfix">
                         <LeftColumn>
-                            <Form>
+                            <Form onSubmit={handleSubmit} method='POST'>
                                 <Row>
                                     <FormGroup>
                                         <Input
@@ -155,6 +175,7 @@ const Contact = () => {
                                         placeholder="Ecrire votre message..."
                                     />
                                 </FormGroup>
+
                                 <SubmitButton>
                                     Envoyer
                                 </SubmitButton>
@@ -164,13 +185,13 @@ const Contact = () => {
                             <InfoTitle>STE Atourrate</InfoTitle>
                             <InfoList>
                                 <li>
-                                Lot12 Moulin Idrissia Etg2 Bur17 Et.2. Atlas, Fès 30000, Maroc
+                                    Lot12 Moulin Idrissia Etg2 Bur17 Et.2. Atlas, Fès 30000, Maroc
                                 </li>
                                 <li>
-                                +212 05356-44048
+                                    +212 05356-44048
                                 </li>
                                 <li>
-                                contact@atourrate.com
+                                    contact@atourrate.com
                                 </li>
                             </InfoList>
                         </RightColumn>
